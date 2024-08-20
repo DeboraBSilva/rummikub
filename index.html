@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rummikub Scoreboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+
+<body>
+    <h1>Placar do Rummikub</h1>
+    <div class="player-input">
+        <input type="text" id="playerName" placeholder="Nome do Jogador">
+        <button class="button-menu" onclick="addPlayer()">Adicionar Jogador</button>
+    </div>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th class="sticky-col">Jogador</th>
+                    <th>Rodada 1 <button onclick="calculateColumn(0)" class="button-calcula-rodada">
+                            <i class="fas fa-calculator" style="font-size: 1.2em;"></i>
+                        </button></th>
+                    <th>Rodada 2 <button onclick="calculateColumn(1)" class="button-calcula-rodada">
+                            <i class="fas fa-calculator" style="font-size: 1.2em;"></i>
+                        </button></th>
+                    <th>Rodada 3 <button onclick="calculateColumn(2)" class="button-calcula-rodada">
+                            <i class="fas fa-calculator" style="font-size: 1.2em;"></i>
+                        </button></th>
+                    <th>Rodada 4 <button onclick="calculateColumn(3)" class="button-calcula-rodada">
+                            <i class="fas fa-calculator" style="font-size: 1.2em;"></i>
+                        </button></th>
+                    <th>Rodada 5 <button onclick="calculateColumn(4)" class="button-calcula-rodada">
+                            <i class="fas fa-calculator" style="font-size: 1.2em;"></i>
+                        </button></th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody id="scoreBody">
+            </tbody>
+        </table>
+    </div>
+    <a href="manual.html" target="_blank" class="button-manual">Visualizar Manual</a>
+
+    <button class="button-menu" onclick="clearScores()">Apagar Pontuações</button>
+    <button class="button-menu" onclick="nextRound()">Próxima Rodada</button>
+    <button class="button-menu" onclick="clearAllPlayers()">Apagar Jogadores</button>
+    <button class="button-menu" onclick="showHelp()">Ajuda</button>
+
+    <div id="helpSection" style="display: none;">
+        <p><strong>Adicionar Jogadores:</strong> Digite o nome do jogador no campo de texto e clique no botão "Adicionar
+            Jogador" para adicionar o jogador à lista.</p>
+        <p><strong>Inserir Pontuações:</strong> Insira as pontuações (valores positivos) para cada rodada nos campos
+            numéricos correspondentes.</p>
+        <p><strong>Calcular Pontuação de uma Rodada:</strong> Clique no botão de calculadora abaixo do nome da rodada.
+            Se
+            todos os valores estiverem preenchidos, será mostrado um aviso e o cálculo não será feito novamente. O valor
+            zero será substituído pela soma dos outros valores negativos.</p>
+        <p><strong>Total de Pontos:</strong> As pontuações totais são calculadas automaticamente e exibidas na última
+            coluna da tabela. A maior pontuação é destacada com um fundo verde.</p>
+        <p><strong>Próxima Rodada:</strong>
+            Altera o jogador que será o mão, marcando o nome do jogador com fundo verde.</p>
+        <p><strong>Limpar Pontuações:</strong> Clique no botão "Apagar Pontuações" para zerar as pontuações de todas as
+            rodadas, mantendo os jogadores na tabela e marcando em verde o jogador que será o primeiro a jogar.</p>
+        <p><strong>Remover Todos os Jogadores:</strong> Clique no botão "Apagar Jogadores" para remover todos os
+            jogadores da tabela e resetar o placar.</p>
+        <p><strong>Armazenamento Automático:</strong> As pontuações e jogadores são salvos automaticamente no navegador.
+        </p>
+        <p><strong>Remover Jogador:</strong> Clique no botão de lixeira ao lado do nome do jogador para excluir o
+            jogador
+            da lista.</p>
+
+        <button class="button-menu" onclick="hideHelp()">Fechar Ajuda</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

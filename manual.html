@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Cálculo de Pontuação de Rummikub</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        p {
+            margin: 10px 0;
+        }
+        ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+        .section {
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>Manual do Usuário: Sistema de Cálculo de Pontuação de Rummikub</h1>
+
+    <div class="section">
+        <h2>1. Introdução</h2>
+        <p>Este sistema foi desenvolvido para auxiliar na contagem de pontos durante as partidas de Rummikub, automatizando o processo de cálculo e garantindo que as regras sejam seguidas corretamente. O sistema permite a inserção das pontuações de cada jogador em cada rodada e realiza o cálculo necessário, destacando os maiores valores e sorteando o jogador da mão.</p>
+    </div>
+
+    <div class="section">
+        <h2>2. Interface do Sistema</h2>
+        <ul>
+            <li><strong>Tabela de Pontuação</strong>: A tabela central da interface permite a inserção das pontuações de cada jogador em cada rodada. Cada linha representa uma rodada e cada coluna, um jogador.</li>
+            <li><strong>Botão Calculadora</strong>: Após inserir as pontuações, pressione o botão de calculadora para que o sistema processe as pontuações de acordo com as regras estabelecidas.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>3. Funcionalidades Principais</h2>
+
+        <h3>3.1 Inserção de Pontuações</h3>
+        <p>Para cada jogador, insira a pontuação obtida na respectiva rodada. Se o jogador não pontuar, deixe o campo em branco ou insira "0".</p>
+        <p>Ao inserir um valor, o sistema considerará o número como positivo, representando o ganho de pontos.</p>
+
+        <h3>3.2 Cálculo Automático da Rodada</h3>
+        <p>O cálculo da rodada será realizado apenas quando houver um único jogador sem pontuação ou com a pontuação "0".</p>
+        <p>Se houver mais de um jogador sem pontuação, o sistema emitirá um alerta indicando que é necessário completar as pontuações antes de proceder.</p>
+        <p>Ao calcular, o sistema:</p>
+        <ul>
+            <li>Converterá todas as pontuações dos jogadores que preencheram valores em números negativos.</li>
+            <li>Somará esses valores e atribuirá a soma ao jogador que estava sem pontuação.</li>
+        </ul>
+
+        <h3>3.3 Verificação de Recalculo</h3>
+        <p>O sistema possui uma verificação que impede o recálculo de uma rodada que já foi processada, evitando alterações indesejadas.</p>
+        <p>Caso uma rodada já tenha sido calculada e o usuário tente recalcular, será exibida uma mensagem informando que a rodada já foi calculada.</p>
+
+        <h3>3.4 Sorteio do Jogador da Mão</h3>
+        <p>Após cada rodada, o sistema automaticamente define o próximo jogador da mão, seguindo a ordem de rotação definida.</p>
+        <p>Caso as pontuações sejam apagadas, um novo sorteio será realizado para definir o jogador da mão.</p>
+    </div>
+
+    <div class="section">
+        <h2>4. Alertas e Mensagens</h2>
+        <ul>
+            <li><strong>"Essa rodada já foi calculada."</strong>: Aparece quando se tenta recalcular uma rodada já processada.</li>
+            <li><strong>"Não é possível calcular a rodada. Ainda existem jogadores sem pontuação."</strong>: Aparece quando há mais de um jogador sem pontuação na rodada.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>5. Dicas de Uso</h2>
+        <ul>
+            <li><strong>Complete todas as pontuações</strong>: Sempre verifique se todos os jogadores, exceto um, têm suas pontuações preenchidas antes de calcular.</li>
+            <li><strong>Revisão após o cálculo</strong>: Após o cálculo de uma rodada, revise as pontuações para garantir que os valores negativos e positivos estejam corretos.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>6. Solução de Problemas</h2>
+        <ul>
+            <li><strong>Problema</strong>: "O sistema não calcula a rodada."
+                <ul>
+                    <li><strong>Solução</strong>: Verifique se há mais de um jogador sem pontuação. O sistema não permitirá o cálculo se esse for o caso.</li>
+                </ul>
+            </li>
+            <li><strong>Problema</strong>: "Recebo uma mensagem dizendo que a rodada já foi calculada."
+                <ul>
+                    <li><strong>Solução</strong>: Isso ocorre quando você tenta recalcular uma rodada que já foi processada. Se precisar fazer ajustes, certifique-se de que todas as pontuações sejam apagadas antes de tentar novamente.</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>7. Conclusão</h2>
+        <p>Este sistema foi criado para facilitar a contagem de pontos no Rummikub, permitindo que os jogadores se concentrem no jogo sem se preocupar com cálculos complexos. Siga as instruções deste manual para garantir uma experiência tranquila e eficiente.</p>
+    </div>
+
+</body>
+</html>
